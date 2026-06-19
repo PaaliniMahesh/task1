@@ -1,0 +1,30 @@
+# ── Employee360 AI — Streamlit Version Dependencies ──────────────────────────
+
+# Core LLM & Agent Framework
+anthropic==0.40.0
+langchain==0.3.7
+langchain-anthropic==0.3.0
+langchain-community==0.3.7
+langchain-core==0.3.15
+
+# Databricks
+databricks-sdk==0.36.0
+databricks-connect==15.4.0
+pyspark==3.5.0
+
+# RAG / Vector Store
+chromadb==0.5.20
+sentence-transformers==3.3.1
+faiss-cpu==1.9.0
+
+# MLflow tracking
+mlflow==2.18.0
+
+# Streamlit UI
+streamlit==1.40.0
+
+# Utilities
+pandas==2.2.3
+python-dotenv==1.0.1
+pydantic==2.10.3
+tenacity==9.0.0
