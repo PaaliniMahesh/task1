@@ -1,0 +1,49 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# TalentPulse360 – Central Configuration
+# ─────────────────────────────────────────────────────────────────────────────
+
+databricks:
+  catalog: gold
+  schema: talentpulse
+  warehouse_id: "d3c7ab2899f36651"
+  workspace_url: "https://dbc-5207e1d4-6763.cloud.databricks.com"
+
+agent:
+  serving_endpoint: "talentpulse360-supervisor-agent"
+  llm_model: "databricks-meta-llama-3-1-70b-instruct"   # or databricks-dbrx-instruct
+  temperature: 0.0
+  max_tokens: 2048
+
+rag:
+  vector_search_endpoint: "talentpulse-vs-endpoint"
+  hr_policy_index: "gold.talentpulse.hr_policy_index"
+  career_path_index: "gold.talentpulse.career_path_index"
+  skill_framework_index: "gold.talentpulse.skill_framework_index"
+  training_catalog_index: "gold.talentpulse.training_catalog_index"
+  embedding_model: "databricks-bge-large-en"
+  chunk_size: 512
+  chunk_overlap: 64
+  top_k: 5
+
+mlflow:
+  experiment_base: "/Shared/TalentPulse360"
+  attendance_model_uri: "models:/talentpulse_attendance_predictor/Production"
+  performance_model_uri: "models:/talentpulse_performance_predictor/Production"
+  promotion_model_uri: "models:/talentpulse_promotion_predictor/Production"
+  registry_uri: "databricks-uc"
+
+tables:
+  attendance_summary: "gold.talentpulse.gold_employee_attendance_summary"
+  training_summary: "gold.talentpulse.gold_employee_training_summary"
+  performance_summary: "gold.talentpulse.gold_employee_performance_summary"
+  employee_360: "gold.talentpulse.gold_employee_360"
+  employee_ranking: "gold.talentpulse.gold_employee_ranking"
+  promotion_readiness: "gold.talentpulse.gold_promotion_readiness"
+  ai_features: "gold.talentpulse.gold_employee_ai_features"
+
+app:
+  title: "TalentPulse360 Assistant"
+  icon: "🧠"
+  theme_color: "#1E3A5F"
+  max_chat_history: 20
+  debug_mode: false

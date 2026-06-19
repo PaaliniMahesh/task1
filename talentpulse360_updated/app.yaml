@@ -1,0 +1,36 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# TalentPulse360 - Databricks App Configuration
+# ─────────────────────────────────────────────────────────────────────────────
+
+# App metadata
+name: talentpulse360-assistant
+displayName: "TalentPulse360 Assistant"
+description: "Agentic AI Employee Assistant powered by Databricks Mosaic AI"
+
+# App entrypoint
+command:
+  - "streamlit"
+  - "run"
+  - "app/app.py"
+
+
+# Environment and dependencies
+env:
+  - name: PYTHONPATH
+    value: "/app"
+
+# Resource configuration
+resources:
+  memory: "4Gi"
+  cpu: "2"
+
+# Python dependencies
+requirements:
+  - databricks-sdk>=0.28.0
+  - mlflow>=2.13.0
+  - databricks-agents>=0.8.0
+  - streamlit>=1.35.0
+  - plotly>=5.22.0
+  - pandas>=2.2.0
+  - PyYAML>=6.0.1
+  - databricks-sql-connector>=3.0.0
